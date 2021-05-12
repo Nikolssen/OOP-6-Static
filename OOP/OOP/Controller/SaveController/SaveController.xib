@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SerializeController" customModule="OOP" customModuleProvider="target">
+            <connections>
+                <outlet property="formatPicker" destination="6CU-sV-KTv" id="6k7-oK-bTs"/>
+                <outlet property="saveButton" destination="C4N-G1-sNi" id="Fm1-WC-A9r"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="375"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Save as" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KMW-56-mEY">
+                    <rect key="frame" x="151.5" y="59.5" width="72.5" height="25.5"/>
+                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="21"/>
+                    <color key="textColor" name="LabelColorAsset"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C4N-G1-sNi">
+                    <rect key="frame" x="147.5" y="230" width="80" height="40"/>
+                    <color key="backgroundColor" name="LabelColorAsset"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="80" id="KFi-1D-bF7"/>
+                        <constraint firstAttribute="height" constant="40" id="fAf-Vk-Mea"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                    <state key="normal" title="Save">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                    <connections>
+                        <action selector="saveAction:" destination="-1" eventType="touchUpInside" id="BsB-UX-Zma"/>
+                    </connections>
+                </button>
+                <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="6CU-sV-KTv">
+                    <rect key="frame" x="71" y="150" width="233" height="32"/>
+                    <segments>
+                        <segment title="JSON"/>
+                        <segment title="XML Plist"/>
+                        <segment title="" image="photo" catalog="system"/>
+                    </segments>
+                    <connections>
+                        <action selector="formatControlChanged:" destination="-1" eventType="valueChanged" id="1aw-bv-Z9k"/>
+                    </connections>
+                </segmentedControl>
+                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="File name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tTd-OA-cm7">
+                    <rect key="frame" x="50" y="200" width="275" height="34"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <gestureRecognizers/>
+            <constraints>
+                <constraint firstItem="KMW-56-mEY" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="2gM-1Y-336"/>
+                <constraint firstItem="C4N-G1-sNi" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="99Y-OW-LYa"/>
+                <constraint firstItem="6CU-sV-KTv" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="9Zi-Fb-fKZ"/>
+                <constraint firstItem="C4N-G1-sNi" firstAttribute="top" secondItem="6CU-sV-KTv" secondAttribute="bottom" constant="49" id="Jh8-RZ-Jkh"/>
+                <constraint firstItem="6CU-sV-KTv" firstAttribute="top" secondItem="KMW-56-mEY" secondAttribute="bottom" constant="65" id="Qmv-uj-s1O"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="C4N-G1-sNi" secondAttribute="bottom" constant="105" id="ZtV-X2-iQs"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <variation key="default">
+                <mask key="subviews">
+                    <exclude reference="tTd-OA-cm7"/>
+                </mask>
+            </variation>
+            <connections>
+                <outletCollection property="gestureRecognizers" destination="aia-CP-HHQ" appends="YES" id="EGd-Bs-Pth"/>
+            </connections>
+            <point key="canvasLocation" x="141.30434782608697" y="74.665178571428569"/>
+        </view>
+        <swipeGestureRecognizer direction="down" id="aia-CP-HHQ">
+            <connections>
+                <action selector="dismissAction:" destination="-1" id="7i7-U8-4Vi"/>
+            </connections>
+        </swipeGestureRecognizer>
+    </objects>
+    <resources>
+        <image name="photo" catalog="system" width="128" height="93"/>
+        <namedColor name="LabelColorAsset">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

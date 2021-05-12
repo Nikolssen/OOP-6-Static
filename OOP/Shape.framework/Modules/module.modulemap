@@ -1,0 +1,11 @@
+framework module Shape {
+  umbrella header "Shape.h"
+
+  export *
+  module * { export * }
+}
+
+module Shape.Swift {
+    header "Shape-Swift.h"
+    requires objc
+}

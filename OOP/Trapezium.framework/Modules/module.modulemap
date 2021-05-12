@@ -1,0 +1,11 @@
+framework module Trapezium {
+  umbrella header "Trapezium.h"
+
+  export *
+  module * { export * }
+}
+
+module Trapezium.Swift {
+    header "Trapezium-Swift.h"
+    requires objc
+}
